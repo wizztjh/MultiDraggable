@@ -11,7 +11,17 @@
 (function ($) {
    $.fn.multiDraggable = function (opts) {
    	var initLeftOffset = []
-   	    ,initTopOffset = [];	    
+   	    ,initTopOffset = [];
+   	
+   	if(opts == "destroy"){
+    	return this.each(function(){
+			$(this)
+				.draggable("destroy")
+       			.unbind(".multiDraggable")
+       			.data("init","");
+       		});
+   	}
+   	
    	return this.each (function (){
    		 $(this).live("mouseover", function() {
 		         if (!$(this).data("init")) {
