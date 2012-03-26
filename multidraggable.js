@@ -23,7 +23,7 @@
    	}
    	
    	return this.each (function (){
-   		 $(this).live("mouseover", function() {
+   		 $(this).bind("mouseover.multiDraggable", function() {
 		         if (!$(this).data("init")) {
 		            $(this).data("init", true).draggable(opts,{
 				         start: function (event,ui) {
