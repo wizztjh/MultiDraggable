@@ -15,19 +15,21 @@ Ex 2:  $("#drag1").multiDraggable({ group: [$("#drag1"),$("#drag2") ]});
 
 In this case, dragging #drag1, makes #drag2 drag along with it, even though #drag2 is not draggable.
 
-Ex 3: (".className").multiDraggable({ 
-                      group: $(.className),
+Ex 3: $(".className").multiDraggable({ 
+                      group: $(".className"),
                       startNative: function (event,ui) {},
                       stopNative : function (event,ui) {},
                       dragNative : function (event,ui) {}
                       });
                       
-Ex 3: (".className").multiDraggable({ group: ".className" });
-
-In this case , by parsing in a jquery selector string will drag the dom object that have the classs name when user start to drag.
-
 You can use all events, options and methods of jQuery UI Draggable, except that
   -'start' is now 'startNative'
   -'drag' is now 'dragNative'
   -'stop' is now 'stopNative'
   - everything else remains the same.
+  
+Ex 3: $(".className").multiDraggable({ group: ".className" });
+
+In this case , by parsing in a jquery selector string will drag the dom object that have the classs name when user start to drag.
+
+Ex4: $(".className").multiDraggable("destroy") to restore to init.
